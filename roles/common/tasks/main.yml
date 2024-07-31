@@ -1,0 +1,30 @@
+---
+- name: Install common packages
+  apt:
+    name:
+      - vim
+      - curl
+      - telnet
+      - unzip
+      - wget
+      - net-tools
+      - htop
+      - nmap
+    state: present
+    update_cache: yes
+
+- name: Set hostname
+  hostname:
+    name: "{{ ansible_hostname }}"
+
+- name: Create user with SSH key
+  user:
+    name: rafaelmota
+    shell: /bin/bash
+    state: present
+
+- name: Set authorized key in alternate location
+  authorized_key:
+    user: rafaelmota
+    state: present
+    key: "{{ lookup('file', 'roles/common/files/id_rsa.pub') }}"

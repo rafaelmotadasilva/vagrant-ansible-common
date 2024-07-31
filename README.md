@@ -76,7 +76,7 @@ Um exemplo básico de um playbook Ansible para usar a role `common`:
 
 ## roles/common/tasks/main.yml
 
-Crie a role common para realizar as seguintes tarefas:
+Crie a role `common` para realizar as seguintes tarefas:
 
 ```
 ---
@@ -110,5 +110,3 @@ Crie a role common para realizar as seguintes tarefas:
     state: present
     key: "{{ lookup('file', 'roles/common/files/id_rsa.pub') }}"
     ```
-
-    

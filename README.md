@@ -67,6 +67,7 @@ Certifique-se de que seu projeto tenha a seguinte estrutura:
 Um exemplo básico de um playbook Ansible para usar a role `common`:
 
 ```
+---
 - name: Setup common configuration
   hosts: all
   become: yes

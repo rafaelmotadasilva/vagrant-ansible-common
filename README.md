@@ -36,13 +36,13 @@ Se mais de uma interface de rede estiver disponível na máquina host, o Vagrant
 
 ## Executando o script
 
-Para criar e configurar a máquina virtual, execute o seguinte comando no terminal:
+Após criar o Vagrantfile, você pode iniciar a máquina virtual com o comando:
 
 ```
 vagrant up
 ```
 
-Isso criará e iniciará a máquina virtual e aplicará a configuração do Ansible.
+Esse comando é fundamental no Vagrant, pois ele cria e configura as máquinas virtuais (VMs) conforme definido no seu Vagrantfile.
 
 ## Estrutura do Projeto
 
@@ -50,14 +50,15 @@ Certifique-se de que seu projeto tenha a seguinte estrutura:
 
 ```
 .
-├── Vagrantfile
 ├── playbook.yml
-└── roles
-    └── common
-        ├── tasks
-        │   └── main.yml
-        └── files
-            └── id_rsa.pub
+├── README.md
+├── roles
+│   └── common
+│       ├── files
+│       │   └── id_rsa.pub
+│       └── tasks
+│           └── main.yml
+└── Vagrantfile
 ```
 
 ## playbook.yml
